@@ -57,8 +57,12 @@ const questions = [
     },
 ];
 
-inquirer.prompt(questions).then(function(response){
-console.log(response);
+inquirer
+
+.prompt(questions)
+
+.then(function(response){
+//console.log(response);
 });
 
 
