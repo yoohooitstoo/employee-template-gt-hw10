@@ -5,5 +5,29 @@ class Employee {
         this.id = id;
         this.email = email;
     }
+
+    getName(){
+        return this.name;
+    }
+
+    getId(){
+        return this.id;
+    }
+
+    getEmail(){
+        return this.email;
+    }
+
+    // getRole(){
+    //     return this;
+    // }
+
 }
-module.exporets = Employee;
+
+// const employee = new Employee(this.name, this.id, this.email);
+
+
+
+
+
+module.exports = Employee;
