@@ -67,7 +67,49 @@ const employees = [];
 
 
 
+const addEmployee = () => inquirer.prompt(questions).then(makeEmployee);
 
+
+
+const makeEmployee = (response) => {
+    let newEmployee;
+//If i have an engineer collect engineer data
+    // name, id, email, github
+    if (response.officeRole === "Engineer"){
+        newEmployee = new Engineer(response.name, response.id, response.email, response.github);
+   }
+// If i have an intern collect intern data
+   // name, id, email, school
+   else if (response.officeRole === "Intern"){
+       newEmployee = new Intern(response.name, response.id, response.email, response.school);
+   }
+//If i have an manager collect manager data
+   // name, id, email, officeNumber
+   else if (response.officeRole === "Manager"){
+       newEmployee = new Manager(response.name, response.id, response.email, response.officeNumber);
+   };
+
+   
+employees.push(newEmployee);
+   
+   if (response.isDone)
+       return addEmployee();
+   // console.log(response);
+
+
+
+//if they select yes then return to questions
+
+//if they select no then write the file
+
+fs.writeFile(outputPath, render(employees), function(err) {
+    if (err) {
+        return console.log(err);
+    }
+    console.log("it worked")
+});
+};
+addEmployee();
 
 
 
