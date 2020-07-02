@@ -24,8 +24,6 @@ class Employee {
 
 }
 
-// const employee = new Employee(this.name, this.id, this.email);
-
 
 
 
