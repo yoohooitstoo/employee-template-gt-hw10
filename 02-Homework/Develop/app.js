@@ -55,15 +55,15 @@ const questions = [
         name: "school",
         when: (response) => response.officeRole === "Intern",
     },
+    {
+        type: "confirm",
+        message: "Would you like to add another employee?",
+        name: "isDone"
+    },
 ];
 
-inquirer
+const employees = [];
 
-.prompt(questions)
-
-.then(function(response){
-//console.log(response);
-});
 
 
 
