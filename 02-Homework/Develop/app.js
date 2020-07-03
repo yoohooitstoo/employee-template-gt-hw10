@@ -91,17 +91,12 @@ const makeEmployee = (response) => {
 
    
 employees.push(newEmployee);
-   
+  //Runs the addEmployee function again if another employee is needed to added 
    if (response.isDone)
        return addEmployee();
    // console.log(response);
 
-
-
-//if they select yes then return to questions
-
 //if they select no then write the file
-
 fs.writeFile(outputPath, render(employees), function(err) {
     if (err) {
         return console.log(err);
